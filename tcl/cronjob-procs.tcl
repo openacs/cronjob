@@ -1,8 +1,16 @@
-# Procs for cronjog package
+ad_library { 
+    Cronjog support procs
+
+    @author Tom Jackson <tom@zmbh.com>
+    @creation-date 22 Sept 2001
+
+    @cvs-id $Id$
+}
 
 ad_proc cronjob_check { } {
 
-		Checks the database for cronjobs that need to run
+    Checks the database for cronjobs that need to run
+
 } {
 
 		# setup the vars
@@ -37,7 +45,7 @@ where
 
 ad_proc cronjob_run { cronjob_id } { 
 
-		Proc to run cronjobs 
+    Proc to run cronjobs 
 
 } {
 		set table "No SQL"
