@@ -89,7 +89,7 @@ where
 				ns_log notice "sending cronjob email to $email"
 				set headers [ns_set create]
 				ns_set put $headers "Content-Type" "text/html"
-				ns_sendmail $email "negeen@zmbh.com" "Cronjob $cronjob_id" "Description: <br>$description<br> $table" $headers
+				ns_sendmail $email  [ad_host_administrator] "Cronjob $cronjob_id" "Description: <br>$description<br> $table" $headers
 		}
 		return
 
