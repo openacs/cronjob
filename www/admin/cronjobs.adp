@@ -46,31 +46,31 @@ No jobs present.
   <th align="left">Minute (0-59)</th>
   <td>
 <select name="minute">
-<option value="*">Every Minute</option>@minute_option@                          
+<option value="*">Every Minute</option>@minute_option;noquote@
 </select><td></tr>
 
  <tr>
   <th align="left">Hour (0-23)</th><td>
 <select name="hr">
-<option value="*">Every Hour</option>@hour_option@                          
+<option value="*">Every Hour</option>@hour_option;noquote@                          
 </select><td></tr>
 
  <tr>
   <th align="left">Month (1-12)</th><td>
 <select name="mon">
-<option value="*">Every Month</option>@month_option@                          
+<option value="*">Every Month</option>@month_option;noquote@                          
 </select><td></tr>
 
  <tr>
   <th align="left">Day (1-31)</th><td>
 <select name="day">
-<option value="*">Every Day</option>@day_option@                          
+<option value="*">Every Day</option>@day_option;noquote@                          
 </select><td></tr>
 
  <tr>
   <th align="left">Day of Week</th><td>
 <select name="dayofweek">
-<option value="*">Every Day of Week</option>@dayofweek_option@                          
+<option value="*">Every Day of Week</option>@dayofweek_option;noquote@                          
 </select><td></tr>
 
  <tr>
