@@ -13,8 +13,9 @@
         <database>postgresql</database>
     </database-support>
         <owner url="mailto:tom@rmadilo.com">Tom Jackson</owner>
-        <summary>Runs sql and tcl code on schedule similar to unix cron.</summary>
-        <description format="text/plain">Runs sql and tcl code on schedule similar to unix cron.</description>
+        <summary>Run sql and tcl code on schedule, similar to unix cron.</summary>
+        <description format="text/plain">Runs sql and tcl code on schedule similar to unix cron.  Some issues exist with 
+        guaranteed execution and blocking.</description>
 
         <!-- No dependency information -->
 
