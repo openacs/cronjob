@@ -6,7 +6,7 @@
   <fullquery name="edit_cronjob">      
     <querytext>
       begin
-        cronjob.delete(cronjob_id => :cronjob_id);
+        cronjob.del(cronjob_id => :cronjob_id);
       end;
     </querytext>
   </fullquery>

@@ -14,7 +14,7 @@ ad_page_contract {
 db_exec_plsql edit_cronjob {
     
     begin
-      cronjob.delete(cronjob_id => :cronjob_id);
+      cronjob.del(cronjob_id => :cronjob_id);
     end;
 }
 

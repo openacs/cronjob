@@ -69,7 +69,7 @@ as
       context_id  in acs_objects.context_id%TYPE default null
     ) return cronjobs.cronjob_id%TYPE;
 
-    procedure delete (
+    procedure del (
       cronjob_id  in cronjobs.cronjob_id%TYPE
     );
     procedure set_attrs ( 
@@ -155,20 +155,20 @@ as
     return v_cronjob_id;
   end new;
 
-  procedure delete (
+  procedure del (
     cronjob_id  in cronjobs.cronjob_id%TYPE
   )
   is
   begin
-    if cronjob_p(cronjob.delete.cronjob_id) = 'f' then
+    if cronjob_p(cronjob.del.cronjob_id) = 'f' then
        return;
     end if;
 
     delete from cronjobs
-    where cronjob_id = cronjob.delete.cronjob_id;
+    where cronjob_id = cronjob.del.cronjob_id;
 
-    acs_object.delete(cronjob_id);
-  end delete;
+    acs_object.del(cronjob_id);
+  end del;
 
   procedure set_attrs ( 
      cronjob_id in cronjobs.cronjob_id%TYPE,
