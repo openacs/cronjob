@@ -3,7 +3,7 @@ ad_page_contract {
     Cronjobs Add Page 2
 		@author: tom@zmbh.com
 		@creation-date: 22 Sept 2001
-		@cvs-id: $Id$
+		@cvs-id $Id$
 
 } {
 

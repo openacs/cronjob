@@ -3,7 +3,7 @@ ad_page_contract {
     Cronjobs List and Add Page
 		@author: tom@zmbh.com
 		@creation-date: 22 Sept 2001
-		@cvs-id: $Id$
+		@cvs-id $Id$
 } -properties {  
 
 		page_title:onevalue

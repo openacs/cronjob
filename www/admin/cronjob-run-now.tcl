@@ -3,7 +3,7 @@ ad_page_contract {
     Run Cronjob
 		@author: tom@zmbh.com
 		@creation-date: 22 Sept 2001
-		@cvs-id: $Id$
+		@cvs-id $Id$
 
 } {
     cronjob_id:integer,trim,notnull
