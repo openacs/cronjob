@@ -16,7 +16,7 @@
     </querytext>
   </fullquery>
 
-  <fullquery name="cronjob_run.crontab_query">
+  <fullquery name="cronjob_run.cronjob_query">
     <querytext>
       select description, run_sql, run_tcl, email
       from cronjobs
