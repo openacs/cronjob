@@ -1,6 +1,6 @@
   <master>
-    <property name="title">@title@</property>
-    <property name="context">@context@</property>
+    <property name="title">@title;noquote@</property>
+    <property name="context">@context;noquote@</property>
 
     <p>This package has no user pages.</p>
     <if @admin_p@ eq 1>
