@@ -10,7 +10,7 @@ ad_page_contract {
 } -properties {  
 
 		page_title:onevalue
-		context_bar:onevalue
+		context:onevalue
 		hour_option:onevalue
 		minute_option:onevalue
 		month_option:onevalue
@@ -20,7 +20,7 @@ ad_page_contract {
 
 set page_title "One Cronjob"
 
-set context_bar [list [list "cronjobs" Cronjobs ] [list "One Cronjob"] ]
+set context [list [list "cronjobs" Cronjobs ] "One Cronjob"]
 
 set hour_option ""
 set minute_option ""

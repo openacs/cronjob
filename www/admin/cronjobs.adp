@@ -1,9 +1,13 @@
 <master>
 <property name="title">@page_title@</property>
-<property name="context_bar">@context_bar@</property>
+<property name="context">@context@</property>
 
 <h3>@page_title@</h3>
 
+<if @cronjobs:rowcount@ eq 0> 
+No jobs present.
+</if>
+<else>
 <table cellspacing="0" cellpadding="2" border="1">
  <tr>
   <th>Cronjob</th>
@@ -27,7 +31,7 @@
 </multiple>
 
 </table>
-
+</else>
 <h3>Add New Cronjob</h3>
 
 <form action="cronjob-add" method="post">
