@@ -20,8 +20,10 @@
 
         <files>
             <file type="package_spec" path="cronjob.info"/>
+            <file type="data_model_drop" db_type="oracle" path="sql/oracle/cronjob-drop.sql"/>
             <file type="data_model_create" db_type="oracle" path="sql/oracle/cronjob-create.sql"/>
             <file type="data_model_create" db_type="postgresql" path="sql/postgresql/cronjob-create.sql"/>
+            <file type="data_model_drop" db_type="postgresql" path="sql/postgresql/cronjob-drop.sql"/>
             <file type="tcl_init" path="tcl/cronjob-init.tcl"/>
             <file type="tcl_procs" path="tcl/cronjob-procs.tcl"/>
             <file type="query_file" db_type="oracle" path="www/admin/cronjob-add-oracle.xql"/>

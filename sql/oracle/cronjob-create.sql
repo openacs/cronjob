@@ -5,7 +5,6 @@
 -- @cvs-id $Id$
 --
 
---drop table cronjobs;
 create table cronjobs (
 	cronjob_id integer not null
    constraint cj_cronjob_id_fk references acs_objects(object_id)

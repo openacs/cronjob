@@ -5,9 +5,6 @@
 -- @cvs-id $Id$
 --
 
--- You might comment out this line
-drop table cronjobs;
-
 create table cronjobs (
 	cronjob_id integer not null
    constraint cj_cronjob_id_fk references acs_objects(object_id)
@@ -29,30 +26,25 @@ create table cronjobs (
   email   varchar(255)
 );
  
-create function inline_0 () 
-returns integer as '  
-begin 
-    PERFORM acs_object_type__create_type (  
-  ''cronjob'', -- object_type  
-  ''CronJob'', -- pretty_name 
-  ''CronJobs'', -- pretty_plural 
-  ''acs_object'',   -- supertype 
-  ''cronjobs'', -- table_name 
-  ''cronjob_id'', -- id_column 
+-- DRB: since I had to remove the various "drop" commands that caused install-stopping
+-- errors in the APM, I got rid of the inline function that used to surround this call
+-- as well.  The inline func approach is great when you need to initialize a bunch
+-- of things in a single transaction (in order to get a clean rollback on failure) but
+-- IMO it just sorta obfuscates the source code if you're just doing a single
+-- command.  All those ugly double apostrophes that are required, etc...
+
+select acs_object_type__create_type (  
+  'cronjob', -- object_type  
+  'CronJob', -- pretty_name 
+  'CronJobs', -- pretty_plural 
+  'acs_object',   -- supertype 
+  'cronjobs', -- table_name 
+  'cronjob_id', -- id_column 
   null, -- package_name 
-  ''f'', -- abstract_p 
+  'f', -- abstract_p 
   null, -- type_extension_table 
   null -- name_method 
-  ); 
-
-     return 0;  
-end;' language 'plpgsql'; 
-
-select inline_0 (); 
- 
-drop function inline_0 ();
-
-drop function  cronjob__cronjob_p (integer);
+); 
 
 create function cronjob__cronjob_p (integer)
 returns boolean
@@ -71,8 +63,6 @@ begin
    return false;
  end if;
 end;' language 'plpgsql';
-
-drop function cronjob__new (integer, integer, varchar, char, char, char(2), char(2), char(2), char(2), char(2), text, text, varchar, integer, varchar, integer);
 
 create function cronjob__new (integer, integer, varchar, char, char, char(2), char(2), char(2), char(2), char(2), text, text, varchar, integer, varchar, integer)
 returns integer as '
@@ -115,8 +105,6 @@ begin
 
 end;' language 'plpgsql';
 
-drop function cronjob__delete (integer);
-
 create function cronjob__delete (integer)
 returns integer as '
 declare
@@ -138,8 +126,6 @@ begin
    return v_return;
 
 end;' language 'plpgsql';
-
-drop function cronjob__set_attrs (integer, integer, varchar, char, char, char(2), char(2), char(2), char(2), char(2), text, text, varchar);
 
 create function cronjob__set_attrs (integer, integer, varchar, char, char, char(2), char(2), char(2), char(2), char(2), text, text, varchar)
 returns integer 
@@ -222,8 +208,6 @@ begin
   end if;
   return v_return;
 end;' language 'plpgsql';
-
-drop function cronjob__reset_attr (integer,varchar);
 
 create function cronjob__reset_attr (integer,varchar)
 returns integer 
