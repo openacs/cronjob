@@ -1,14 +1,14 @@
 ad_page_contract {
    
     Cronjobs Edit Page 2
-		@author: tom@zmbh.com
-		@creation-date: 22 Sept 2001
-		@cvs-id $Id$
+    @author tom@zmbh.com
+    @creation-date 22 Sept 2001
+    @cvs-id $Id$
 
 } {
     cronjob_id:integer,trim,notnull
-		{description:trim,html ""}
-		{minute:trim ""}
+    {description:trim,html ""}
+    {minute:trim ""}
     {hr:trim ""}
     {mon:trim ""}
     {day:trim ""}
@@ -16,14 +16,13 @@ ad_page_contract {
     {run_sql:trim ""}
     {run_tcl:trim ""}
     {email:trim,email ""}
-		{approved_p:trim ""}
-		{disabled_p:trim ""}
-
+    {approved_p:trim ""}
+    {disabled_p:trim ""}
 }
 
 db_exec_plsql edit_cronjob {
  
-	 begin
+    begin
     cronjob.set_attrs(
       cronjob_id => :cronjob_id,
       description => :description,
@@ -36,9 +35,8 @@ db_exec_plsql edit_cronjob {
       dayofweek => :dayofweek,
       run_sql => :run_sql,
       run_tcl => :run_tcl,
-      email => :email
-			);
-	 end;
+      email => :email);
+    end;
 }
 
 ad_returnredirect cronjobs

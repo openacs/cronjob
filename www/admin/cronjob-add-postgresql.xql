@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 
 <queryset>
-   <rdbms><type>postgresql</type><version>7.1</version></rdbms>
+  <rdbms><type>postgresql</type><version>7.1</version></rdbms>
 
-<fullquery name="add_cronjob">      
-      <querytext>
+  <fullquery name="add_cronjob">      
+    <querytext>
       select [qd_write_query_select cronjob__new {
       user_id => :user_id
       description => :description
@@ -19,8 +19,7 @@
       run_tcl => :run_tcl
       email => :email } ]
 
-      </querytext>
-</fullquery>
-
+    </querytext>
+  </fullquery>
  
 </queryset>
