@@ -29,7 +29,7 @@ where
 	
 		db_foreach cronjob_sched_foreach $sql {
 
-				ns_schedule_proc -once -thread 1 cronjob_run $cronjob_id
+				ad_schedule_proc -once t -thread t 1 cronjob_run $cronjob_id
 		}
 
 }

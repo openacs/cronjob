@@ -8,7 +8,7 @@ ad_library {
 }
 
 
-ns_schedule_proc -thread 60 cronjob_check 
+ad_schedule_proc -thread t 60 cronjob_check 
 
 if {![info exists qd_write_query_select]} {
  
