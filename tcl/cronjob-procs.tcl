@@ -35,7 +35,7 @@ ad_proc cronjob_run { cronjob_id } {
 } {
     set table "No SQL"
     ns_log Notice "Cronjob_id is $cronjob_id"
-    db_1row crontab_query $sql
+    db_1row cronjob_query {}
     db_release_unused_handles
     if {![string match "" $run_sql]} {
 	set table "<table cellspacing=0 cellpadding=2 border=1>"

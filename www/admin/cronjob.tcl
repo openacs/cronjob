@@ -30,6 +30,8 @@ set dayofweek_option ""
 
 db_1row cronjob_query ""
 
+set dayofweek [string trim $dayofweek]
+
 foreach {value name} [list "\*" "Every Month" 01 January 02 February 03 March 04 April 05 May 06 June 07 July 08 August 09 September 10 October 11 November 12 December] {
     if {[string match $mon $value]} {
 	append month_option "
