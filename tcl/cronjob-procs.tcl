@@ -34,7 +34,7 @@ ad_proc cronjob_run { cronjob_id } {
 
 } {
     set table "No SQL"
-    ns_log Notice "Cronjob_id is $cronjob_id"
+    ns_log Debug "cronjob_run: Cronjob_id is $cronjob_id"
     db_1row cronjob_query {}
     db_release_unused_handles
     if {![string match "" $run_sql]} {
@@ -69,7 +69,7 @@ ad_proc cronjob_run { cronjob_id } {
     eval $run_tcl
 
     if {![string match "" $email]} {
-	ns_log notice "sending cronjob email to $email"
+	ns_log Debug "cronjob_run: sending cronjob email to $email"
 	set headers [ns_set create]
 	ns_set put $headers "Content-Type" "text/html"
 	ns_sendmail $email  [ad_host_administrator] "Cronjob $cronjob_id" "Description: <br>$description<br> $table" $headers
