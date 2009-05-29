@@ -5,7 +5,7 @@
     <querytext>
       select *
       from cronjobs
-      order by user_id
+      order by user_id, cronjob_id
     </querytext>
   </fullquery>
   

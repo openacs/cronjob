@@ -1,8 +1,7 @@
 ad_page_contract {
    
     Cronjobs Edit Page 2
-
-    @author tom@zmbh.com
+    @author tom@junom.com
     @creation-date 22 Sept 2001
     @cvs-id $Id$
 
@@ -14,9 +13,9 @@ ad_page_contract {
     {mon:trim ""}
     {day:trim ""}
     {dayofweek:trim ""}
-    {run_sql:trim ""}
+    {run_sql:trim,allhtml ""}
     {run_tcl:trim ""}
-    {email:trim,email ""}
+    {email:trim ""}
     {approved_p:trim ""}
     {disabled_p:trim ""}
 }

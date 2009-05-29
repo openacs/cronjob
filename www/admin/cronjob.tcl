@@ -1,11 +1,9 @@
 ad_page_contract {
    
     Cronjobs List and Add Page
-
-    @author tom@zmbh.com
+    @author tom@junom.com
     @creation-date 22 Sept 2001
     @cvs-id $Id$
-
 } {
     cronjob_id:integer,notnull
 
@@ -45,7 +43,7 @@ foreach {value name} [list "\*" "Every Month" 01 January 02 February 03 March 04
 }
 
 foreach {value name} [list "\*" "Every Day of Week" 0 Sunday 1 Monday 2 Tuesday 3 Wednesday 4 Thursday 5 Friday 6 Saturday] {
-    if {[string match $dayofweek $value]} {
+    if {"$dayofweek" eq "$value"} {
 	append dayofweek_option "
 <option value=\"$value\" selected >$name</option>"
     } else {

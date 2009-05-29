@@ -1,6 +1,6 @@
 <master>
-<property name="title">@page_title;noquote@</property>
-<property name="context">@context;noquote@</property>
+<property name="title">@page_title@</property>
+<property name="context">@context@</property>
 
 <h3>@page_title@</h3>
 
@@ -32,37 +32,37 @@
   <th align="left">Minute (0-59)</th>
   <td>
 <select name="minute">
-@minute_option@                          
+@minute_option;noquote@                          
 </select><td></tr>
 
  <tr>
   <th align="left">Hour (0-23)</th><td>
 <select name="hr">
-@hour_option@                          
+@hour_option;noquote@                          
 </select><td></tr>
 
  <tr>
   <th align="left">Month (1-12)</th><td>
 <select name="mon">
-@month_option@                          
+@month_option;noquote@                          
 </select><td></tr>
 
  <tr>
   <th align="left">Day (1-31)</th><td>
 <select name="day">
-@day_option@                          
+@day_option;noquote@                          
 </select><td></tr>
 
  <tr>
   <th align="left">Day of Week</th><td>
 <select name="dayofweek">
-@dayofweek_option@                          
+@dayofweek_option;noquote@                          
 </select><td></tr>
 
  <tr>
   <th align="left">SQL to Run</th>
   <td>
-<textarea cols="60" rows="4" name="run_sql" wrap="absolute">@run_sql@</textarea>
+<textarea cols="80" rows="10" name="run_sql" wrap="absolute">@run_sql@</textarea>
   <td></tr>
 
  <tr>

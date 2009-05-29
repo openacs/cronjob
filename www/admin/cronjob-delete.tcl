@@ -1,8 +1,7 @@
 ad_page_contract {
     
     Cronjob Delete
-
-    @author tom@zmbh.com
+    @author tom@junom.com
     @creation-date 22 Sept 2001
     @cvs-id $Id$
 
@@ -11,11 +10,6 @@ ad_page_contract {
 
 }
 
-db_exec_plsql edit_cronjob {
-    
-    begin
-      cronjob.del(cronjob_id => :cronjob_id);
-    end;
-}
+db_exec_plsql edit_cronjob {}
 
 ad_returnredirect cronjobs

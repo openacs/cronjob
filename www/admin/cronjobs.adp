@@ -1,6 +1,6 @@
 <master>
-<property name="title">@page_title;noquote@</property>
-<property name="context">@context;noquote@</property>
+<property name="title">@page_title@</property>
+<property name="context">@context@</property>
 
 <h3>@page_title@</h3>
 
@@ -46,7 +46,7 @@ No jobs present.
   <th align="left">Minute (0-59)</th>
   <td>
 <select name="minute">
-<option value="*">Every Minute</option>@minute_option;noquote@
+<option value="*">Every Minute</option>@minute_option;noquote@                          
 </select><td></tr>
 
  <tr>
