@@ -1,5 +1,5 @@
 ad_page_contract {
-   
+    
     Cronjobs Edit Page 2
     @author tom@junom.com
     @creation-date 22 Sept 2001
@@ -20,23 +20,6 @@ ad_page_contract {
     {disabled_p:trim ""}
 }
 
-db_exec_plsql edit_cronjob {
- 
-    begin
-    cronjob.set_attrs(
-      cronjob_id => :cronjob_id,
-      description => :description,
-      approved_p => :approved_p,
-      disabled_p => :disabled_p,
-      minute => :minute,
-      hr => :hr,
-      mon => :mon,
-      day => :day,
-      dayofweek => :dayofweek,
-      run_sql => :run_sql,
-      run_tcl => :run_tcl,
-      email => :email);
-    end;
-}
+db_exec_plsql edit_cronjob {}
 
 ad_returnredirect cronjobs

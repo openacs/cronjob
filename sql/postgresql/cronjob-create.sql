@@ -6,12 +6,12 @@
 --
 
 create table cronjobs (
-	cronjob_id integer not null
+    cronjob_id integer not null
    constraint cj_cronjob_id_fk references acs_objects(object_id)
    constraint cj_cronjob_id_pk primary key,
   user_id integer not null
    constraint cj_user_id_fk references users,
-	description varchar(100) not null,
+    description varchar(100) not null,
   approved_p char(1) default 'f' not null
    constraint cj_approved_p_ck check (approved_p in ('f','t')),
   disabled_p char(1) default 'f' not null
