@@ -71,9 +71,10 @@ ad_proc cronjob_run { cronjob_id } {
 
     if {![string match "" $email]} {
         ns_log Debug "sending cronjob email to $email"
-        set headers [ns_set create]
-        ns_set put $headers "Content-Type" "text/html"
-        ns_sendmail $email  [ad_host_administrator] "Cronjob $cronjob_id" "Description: <br>$description<br> $table" $headers
+        acs_mail_lite::send -to_addr $email -from_addr [ad_host_administrator] \
+	    -subject "Cronjob $cronjob_id" \
+	    -body "Description: <br>$description<br> $table" \
+	    -extraheaders [list [list "Content-Type" "text/html"]]
     }
     return
 
