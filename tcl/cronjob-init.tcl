@@ -22,8 +22,8 @@ if {![info exists qd_write_query_select]} {
 
     } {   
         ns_log Debug "Running qd_write_query_select with $package $attrs"
-        set query [list]
-        set in_args [list]
+        set query {}
+        set in_args {}
         set args [concat $attrs]
         foreach {attr sign value} $args {
             lappend in_args $attr
@@ -135,7 +135,7 @@ if {![info exists qd_write_query_select]} {
 
     proc qd_write_query {package args} {
         
-        set query [list]
+        set query {}
         set attrs_and_defaults [eval qd_choose_function $package $args]
         foreach {attr default_value} $attrs_and_defaults {
             if {[lsearch $args $attr] < 0 } {
@@ -153,7 +153,7 @@ if {![info exists qd_write_query_select]} {
 
     proc qd_write_query_upvar {package listvar} {
         
-        set query [list]
+        set query {}
         upvar $listvar args
         set attrs_and_defaults [eval qd_choose_function $package $args]
         if {[string match "!NO MATCH:*" $attrs_and_defaults ]} {
