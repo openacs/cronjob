@@ -31,4 +31,4 @@ if {[db_0or1row get_package_name ""]} {
 
 # Set the context bar.
 
-set context [list]
+set context {}
